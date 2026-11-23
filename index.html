@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Snowveil City · 雪落之城 3D</title>
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.module.js",
+    "three/addons/": "./vendor/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="scene"></canvas>
+
+  <div id="loading">
+    <div class="loading-inner">
+      <div class="loading-title">SNOWVEIL CITY</div>
+      <div class="loading-sub">正在构筑雪港市…</div>
+      <div class="loading-bar"><div id="loading-fill"></div></div>
+      <div class="loading-tip">点击画面锁定鼠标 · Esc 释放</div>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div id="top-left">
+      <div class="hud-card">
+        <div class="hud-title"><span class="dot"></span> 白雪 <small>/ 雪港市</small></div>
+        <div id="quest-line">点击咖啡店门口的阿澈，开始《初雪来信》</div>
+      </div>
+    </div>
+    <div id="top-right">
+      <div class="hud-card small" id="hint-card">WASD 移动 · 鼠标视角 · Shift 奔跑 · Space 跳跃 · E 互动</div>
+      <div class="hud-card small" id="mode-card">第三人称</div>
+    </div>
+    <div id="crosshair"></div>
+    <div id="interact" class="hidden"><span class="key">E</span> <span id="interact-text">互动</span></div>
+    <div id="bottom-left">M 任务日志 · H 帮助 · Esc 暂停</div>
+    <div id="marker-label" class="hidden"></div>
+  </div>
+
+  <div id="dialogue" class="hidden">
+    <div class="dlg-box">
+      <div class="dlg-portrait"><img src="assets/heroine.jpg" alt="立绘"><div id="dlg-initial" class="dlg-initial hidden"></div></div>
+      <div class="dlg-body">
+        <div id="dlg-name"></div>
+        <div id="dlg-text"></div>
+        <div class="dlg-next">点击 / 空格 继续 ▼</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="panel" class="hidden">
+    <div class="panel-head"><span id="panel-title">任务日志</span><button id="panel-close">✕</button></div>
+    <div id="panel-body"></div>
+  </div>
+
+  <div id="pause" class="hidden"><div class="menu"><h2>暂停</h2><button id="btn-resume">继续</button><button id="btn-help">操作说明</button><div class="menu-note">进度仅在本原型内保存，刷新会重置任务状态。</div></div></div>
+
+  <div id="toast" class="hidden"></div>
+  <div id="fatal" class="hidden"></div>
+  <div id="debug" style="display:none"></div>
+</div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
