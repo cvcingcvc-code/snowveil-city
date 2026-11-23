@@ -1,4 +1,24 @@
+# 依赖与本地工具缓存
 node_modules/
 .chrome-test-profile/
+.cache/
+__pycache__/
+*.pyc
 *.log
+
+# 构建产物
+dist/
+build/
+out/
+
+# 密钥与凭据（禁止公开）
+.env
+.env.*
+*.pem
+*.key
+*.token
+id_rsa*
+
+# 系统文件
 .DS_Store
+Thumbs.db
