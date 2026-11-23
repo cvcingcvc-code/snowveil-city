@@ -101,3 +101,13 @@ python -m http.server 8080
 ## 8. 给云端 Agent 的接手提示词（可直接复制）
 
 > 从 `https://github.com/cvcingcvc-code/snowveil-city.git` 克隆仓库，切换到 `feat/cloud-migration` 分支，先读 `docs/CLOUD_HANDOFF.md`、`docs/ARCHITECTURE.md` 和 `docs/QA.md`。不要重建项目、不要删除已有文件。按 HTTP 服务方式运行并复验第一章任务。然后向用户确认正式引擎选择，再继续扩充。不要声称已完成未验证的性能或打包目标。
+
+## 9. 本次迁移结果（已核验）
+
+- 本地高负载任务已停止：HTTP 服务 8123 与无头 Chrome 调试实例均已终止；未再启动本地 3D 预览。
+- 本地项目根目录：`C:\Users\lin\WorkBuddy\2026-11-23-19-59-13\snowveil-3d`；2D 前作 `../snow-city/` 完整保留。
+- 迁移分支：`feat/cloud-migration`，远端已创建并跟踪。
+- 推送成功后核验：远端提交 `462336de631f41ea8ec591914e3f9c167212872f`（`docs: prepare cloud migration handoff and tighten gitignore`），其父提交 `add188d395791665c462a881dfdab78099f0bb79`（3D 原型本体）。
+- 远端文件树已核验：`index.html`、`src/main.js`、`src/player.js`、`README.md`、`docs/CLOUD_HANDOFF.md`、`docs/QA.md`、`docs/ACCEPTANCE.md`、`assets/heroine.jpg`、`vendor/three.module.js`、`tests/quest-flow.mjs` 均存在；共 116 个文件已提交。
+- Pull Request：**未创建**。原因：远端仓库原本为空，`main` 分支不存在（GitHub API 返回 404），没有合法 PR 目标；未擅自创建 main、未强制推送、未删除任何远程分支、未自动合并。
+- 云端开发环境：**未证实可用**。代码已托管不等于已在独立云端环境继续开发；见第 6 节。
